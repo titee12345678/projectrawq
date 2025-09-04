@@ -1,336 +1,66 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Computer Education</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;700&display=swap" rel="stylesheet">
-    <style>
-        /* General Styles */
-        body {
-            font-family: 'Sarabun', sans-serif;
-            margin: 0;
-            background-color: #f7fafc;
-            color: #4a5568;
-            display: flex;
-            flex-direction: column;
-            height: 100vh; /* Make body fill the viewport height */
-        }
-
-        /* Full-width Header */
-        .main-header {
-            background-color: white;
-            box-shadow: 0 2px 4px -1px rgba(0,0,0,0.1);
-            padding: 1rem 2.5rem;
-            box-sizing: border-box;
-            flex-shrink: 0; /* Prevent header from shrinking */
-            z-index: 10;
-            text-align: center; /* Center align the text */
-        }
-
-        .main-header h1 {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #6D28D9;
-            margin: 0;
-        }
-        
-        .main-header p {
-             color: #a0aec0;
-             margin: 0;
-             font-size: 0.875rem;
-        }
-
-        /* Layout Container for Sidebar and Content */
-        .container {
-            display: flex;
-            flex-grow: 1; /* Make container fill remaining vertical space */
-            overflow: hidden; /* To contain sidebar/content scrolling */
-        }
-
-        /* Sidebar */
-        .sidebar {
-            width: 350px; /* Increased width for longer full titles */
-            background-color: #E8DFFF;
-            color: #4A235A;
-            padding: 1rem;
-            display: flex;
-            flex-direction: column;
-            flex-shrink: 0;
-            overflow-y: auto;
-        }
-
-        .sidebar-header {
-            text-align: center;
-            margin-bottom: 1.5rem;
-        }
-        
-        .sidebar-header .icon {
-             height: 3rem;
-             width: 3rem;
-             margin: 0 auto;
-             color: #6D28D9;
-        }
-
-        .sidebar-header h2 {
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-top: 0.5rem;
-        }
-
-        .menu-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .menu-group-title {
-            font-size: 1rem;
-            font-weight: 700;
-            margin: 0 0 0.5rem 0.75rem;
-            color: #3d1c4a;
-            line-height: 1.3;
-        }
-
-        .sidebar nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .menu-btn-sub {
-            display: block;
-            width: 100%;
-            text-align: left;
-            padding: 0.5rem 0.75rem; /* Smaller padding */
-            border-radius: 0.5rem;
-            background: none;
-            border: none;
-            color: #4A235A;
-            cursor: pointer;
-            font-size: 0.9rem; /* Smaller font */
-            transition: background-color 0.2s;
-            line-height: 1.4;
-            text-decoration: none;
-            box-sizing: border-box;
-            padding-left: 1.5rem; /* Indent sub-items */
-        }
-
-        .menu-btn-sub:hover {
-            background-color: #D8B4FE;
-        }
-        
-        /* Main Content Area */
-        .main-content {
-            flex-grow: 1;
-            padding: 2.5rem;
-            background-color: #FEFCE8;
-            overflow-y: auto;
-        }
-
-        /* --- CSS Target Logic --- */
-        .content-section {
-            display: none; /* Hide all content sections by default */
-        }
-        #welcome {
-             display: block; /* Show welcome message by default */
-        }
-        
-        /* Show the targeted content section and hide the welcome message */
-        .content-section:target {
-            display: block;
-        }
-        .content-section:target ~ #welcome {
-            display: none;
-        }
-        /* --- End CSS Target Logic --- */
-
-
-        #welcome h2 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-
-        .unit-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #2d3748;
-            margin-bottom: 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom-width: 2px;
-            border-bottom-style: solid;
-        }
-        
-        .unit-title.color-blue { border-color: #4299e1; }
-        .unit-title.color-green { border-color: #48bb78; }
-        .unit-title.color-orange { border-color: #ed8636; }
-
-        .topic-summary {
-             color: #718096;
-             margin-top: 0.5rem;
-             line-height: 1.7;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            body {
-                height: auto;
-                display: block;
-            }
-            .container {
-                flex-direction: column;
-                height: auto;
-                overflow: visible;
-            }
-            .sidebar {
-                width: 100%;
-                height: auto;
-                box-sizing: border-box;
-                overflow-y: visible;
-            }
-             .main-content {
-                padding: 1.5rem;
-                overflow-y: visible;
-            }
-            .main-header {
-                padding: 1rem 1.5rem;
-            }
-            .main-header h1 {
-                font-size: 1.5rem;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Computer Education</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-    <!-- Header -->
-    <header class="main-header">
-        <h1>WELCOME</h1>
-        <p>to Computer Education</p>
-    </header>
-
-    <div class="container">
-        <!-- Sidebar -->
-        <aside class="sidebar">
-            <div class="sidebar-header">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
-                  <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 011.085.12L10 11.85l3.665-3.679a.999.999 0 011.085-.12L17 7.92a1 1 0 000-1.84l-7-3zM10 15a1 1 0 00.894.553l7-3A1 1 0 0017 10.5V8.22a1 1 0 00-1.447-.894L10 11.114l-5.553-3.784A1 1 0 003 8.22v2.28a1 1 0 00.106.447l7 3z" />
-                </svg>
-                <h2>สารบัญ</h2>
-            </div>
-            <nav>
-                <div class="menu-group">
-                    <h3 class="menu-group-title">หน่วยการเรียนรู้ที่ 1: เทคโนโลยีสารสนเทศในการนำเสนอ</h3>
-                    <ul>
-                        <li><a href="#unit1-1" class="menu-btn-sub">หลักการออกแบบการนำเสนอ</a></li>
-                        <li><a href="#unit1-2" class="menu-btn-sub">การเลือกใช้ซอฟต์แวร์</a></li>
-                        <li><a href="#unit1-3" class="menu-btn-sub">การใช้สื่อมัลติมีเดีย</a></li>
-                        <li><a href="#unit1-4" class="menu-btn-sub">เทคนิคการนำเสนอให้น่าสนใจ</a></li>
-                        <li><a href="#unit1-5" class="menu-btn-sub">การแบ่งปันข้อมูลอย่างปลอดภัย</a></li>
-                    </ul>
-                </div>
-                 <div class="menu-group">
-                    <h3 class="menu-group-title">หน่วยการเรียนรู้ที่ 2: นวัตกรรมและการเปลี่ยนแปลงของเทคโนโลยี</h3>
-                    <ul>
-                        <li><a href="#unit2-1" class="menu-btn-sub">ความหมายของนวัตกรรม</a></li>
-                        <li><a href="#unit2-2" class="menu-btn-sub">ปัญญาประดิษฐ์ (AI)</a></li>
-                        <li><a href="#unit2-3" class="menu-btn-sub">อินเทอร์เน็ตของสรรพสิ่ง (IoT)</a></li>
-                        <li><a href="#unit2-4" class="menu-btn-sub">เทคโนโลยีคลาวด์</a></li>
-                        <li><a href="#unit2-5" class="menu-btn-sub">ผลกระทบของเทคโนโลยี</a></li>
-                    </ul>
-                </div>
-                 <div class="menu-group">
-                    <h3 class="menu-group-title">หน่วยการเรียนรู้ที่ 3: เทคโนโลยีสารสนเทศกับอาชีพ</h3>
-                    <ul>
-                        <li><a href="#unit3-1" class="menu-btn-sub">อาชีพนักพัฒนาซอฟต์แวร์</a></li>
-                        <li><a href="#unit3-2" class="menu-btn-sub">อาชีพนักวิเคราะห์ข้อมูล</a></li>
-                        <li><a href="#unit3-3" class="menu-btn-sub">อาชีพความปลอดภัยไซเบอร์</a></li>
-                        <li><a href="#unit3-4" class="menu-btn-sub">อาชีพการตลาดดิจิทัล</a></li>
-                        <li><a href="#unit3-5" class="menu-btn-sub">ทักษะที่จำเป็นในอนาคต</a></li>
-                    </ul>
-                </div>
-            </nav>
-        </aside>
-
-        <!-- Main Content -->
-        <main class="main-content">
-            
-            <!-- Unit 1 Content Sections -->
-            <div id="unit1-1" class="content-section">
-                <h2 class="unit-title color-blue">หลักการออกแบบการนำเสนอ</h2>
-                <p class="topic-summary">การออกแบบสไลด์ที่ดีควรเน้นความเรียบง่ายและชัดเจน ใช้หลักการออกแบบพื้นฐาน เช่น ความใกล้ชิด (Proximity) จัดกลุ่มเนื้อหาที่เกี่ยวข้องกัน, การจัดแนว (Alignment) เพื่อให้ดูเป็นระเบียบ, การใช้ซ้ำ (Repetition) ของสีหรือฟอนต์เพื่อความเป็นเอกภาพ และการสร้างความต่าง (Contrast) เพื่อดึงดูดสายตาไปยังจุดสำคัญ ควรหลีกเลี่ยงการใส่ข้อความมากเกินไปในหนึ่งสไลด์ และใช้ภาพหรือกราฟิกเพื่อช่วยสื่อความหมายแทน</p>
-            </div>
-            <div id="unit1-2" class="content-section">
-                <h2 class="unit-title color-blue">การเลือกใช้ซอฟต์แวร์นำเสนอ</h2>
-                <p class="topic-summary">มีซอฟต์แวร์นำเสนอให้เลือกใช้หลากหลายตามความต้องการ เช่น Microsoft PowerPoint ที่เป็นมาตรฐานและมีฟังก์ชันครบครัน, Google Slides ที่ทำงานบนคลาวด์และเหมาะกับการทำงานร่วมกัน, Keynote สำหรับผู้ใช้ Apple ที่เน้นดีไซน์สวยงาม, หรือ Canva ที่ใช้งานง่าย มีเทมเพลตสำเร็จรูปจำนวนมาก เหมาะสำหรับผู้ที่ต้องการความรวดเร็วและสวยงามโดยไม่ต้องออกแบบเอง</p>
-            </div>
-            <div id="unit1-3" class="content-section">
-                <h2 class="unit-title color-blue">การใช้สื่อมัลติมีเดีย</h2>
-                <p class="topic-summary">การใช้สื่อผสม เช่น รูปภาพ วิดีโอ เสียง หรืออินโฟกราฟิก จะช่วยให้การนำเสนอมีความน่าสนใจและเข้าใจง่ายยิ่งขึ้น แต่ควรเลือกใช้สื่อที่เกี่ยวข้องกับเนื้อหา มีคุณภาพสูง และไม่ละเมิดลิขสิทธิ์ การใส่เสียงหรือวิดีโอควรมีความยาวที่เหมาะสม ไม่รบกวนการนำเสนอ และควรทดสอบการแสดงผลก่อนการนำเสนอจริงเสมอ</p>
-            </div>
-            <div id="unit1-4" class="content-section">
-                <h2 class="unit-title color-blue">เทคนิคการนำเสนอให้น่าสนใจ</h2>
-                <p class="topic-summary">นอกจากการออกแบบสไลด์ที่ดีแล้ว เทคนิคของผู้นำเสนอก็เป็นสิ่งสำคัญ ควรมีการเริ่มต้นที่น่าดึงดูด ใช้การเล่าเรื่อง (Storytelling) เพื่อเชื่อมโยงกับผู้ฟัง มีการสบตาและใช้น้ำเสียงที่น่าฟัง อาจมีการใช้คำถามหรือทำโพลล์เพื่อสร้างปฏิสัมพันธ์ และสรุปประเด็นสำคัญในตอนท้ายเพื่อให้ผู้ฟังจดจำเนื้อหาได้</p>
-            </div>
-            <div id="unit1-5" class="content-section">
-                <h2 class="unit-title color-blue">การแบ่งปันข้อมูลอย่างปลอดภัย</h2>
-                <p class="topic-summary">เมื่อต้องการแบ่งปันไฟล์นำเสนอ ควรคำนึงถึงความปลอดภัย โดยการตั้งค่าสิทธิ์การเข้าถึงให้เหมาะสม (ดูได้อย่างเดียว, แก้ไขได้) บนบริการคลาวด์ เช่น Google Drive หรือ OneDrive หากข้อมูลมีความลับ อาจใช้วิธีการป้องกันด้วยรหัสผ่าน นอกจากนี้ ควรทำความเข้าใจเรื่องสัญญาอนุญาต Creative Commons หากต้องการนำผลงานไปเผยแพร่ในที่สาธารณะ</p>
-            </div>
-
-            <!-- Unit 2 Content Sections -->
-            <div id="unit2-1" class="content-section">
-                <h2 class="unit-title color-green">ความหมายของนวัตกรรมและเทคโนโลยี</h2>
-                <p class="topic-summary">เทคโนโลยี คือการนำความรู้ทางวิทยาศาสตร์มาประยุกต์ใช้เพื่อสร้างเครื่องมือหรือกระบวนการที่ช่วยแก้ปัญหาและอำนวยความสะดวก ส่วนนวัตกรรม คือการสร้างสรรค์สิ่งใหม่ๆ หรือพัฒนาต่อยอดจากสิ่งเดิมให้ดีขึ้น ซึ่งอาจเป็นได้ทั้งผลิตภัณฑ์ บริการ หรือกระบวนการใหม่ๆ ที่มีคุณค่าและเป็นประโยชน์</p>
-            </div>
-             <div id="unit2-2" class="content-section">
-                <h2 class="unit-title color-green">ปัญญาประดิษฐ์ (AI) ในชีวิตประจำวัน</h2>
-                <p class="topic-summary">AI ไม่ใช่เรื่องไกลตัวอีกต่อไป แต่แฝงอยู่ในการใช้งานประจำวันของเรา เช่น ระบบแนะนำสินค้าหรือภาพยนตร์ในแอปพลิเคชันต่างๆ, ผู้ช่วยสั่งการด้วยเสียงอย่าง Siri หรือ Google Assistant, ระบบแปลภาษาอัตโนมัติ, และระบบนำทาง GPS ที่สามารถคำนวณเส้นทางที่ดีที่สุดแบบเรียลไทม์ได้</p>
-            </div>
-             <div id="unit2-3" class="content-section">
-                <h2 class="unit-title color-green">อินเทอร์เน็ตของสรรพสิ่ง (IoT)</h2>
-                <p class="topic-summary">IoT คือแนวคิดที่อุปกรณ์ต่างๆ สามารถเชื่อมต่อและสื่อสารกันผ่านอินเทอร์เน็ตได้ ทำให้เราควบคุมอุปกรณ์เหล่านั้นได้จากระยะไกล ตัวอย่างที่เห็นได้ชัดคืออุปกรณ์ Smart Home เช่น หลอดไฟอัจฉริยะที่สั่งเปิด-ปิดผ่านมือถือ, นาฬิกา Smart Watch ที่ติดตามข้อมูลสุขภาพ, หรือแม้แต่รถยนต์ที่เชื่อมต่ออินเทอร์เน็ตได้</p>
-            </div>
-             <div id="unit2-4" class="content-section">
-                <h2 class="unit-title color-green">เทคโนโลยีคลาวด์ (Cloud Computing)</h2>
-                <p class="topic-summary">คือการใช้บริการทรัพยากรคอมพิวเตอร์ผ่านอินเทอร์เน็ต แทนที่จะเก็บข้อมูลหรือโปรแกรมไว้ในเครื่องของตัวเอง ทำให้เราสามารถเข้าถึงข้อมูลและทำงานได้จากทุกที่ทุกเวลา ตัวอย่างที่คุ้นเคยคือบริการเก็บข้อมูลออนไลน์ (Google Drive, Dropbox) หรือชุดโปรแกรมสำนักงานออนไลน์ (Microsoft 365, Google Workspace)</p>
-            </div>
-             <div id="unit2-5" class="content-section">
-                <h2 class="unit-title color-green">ผลกระทบของเทคโนโลยี</h2>
-                <p class="topic-summary">การเปลี่ยนแปลงทางเทคโนโลยีส่งผลกระทบต่อสังคมในวงกว้าง ทั้งในแง่บวกที่ช่วยเพิ่มประสิทธิภาพและความสะดวกสบาย แต่ก็มีแง่ลบที่ต้องระวัง เช่น การที่ AI อาจเข้ามาแทนที่แรงงานคน, ปัญหาความเป็นส่วนตัวของข้อมูล, และช่องว่างทางดิจิทัล (Digital Divide) ที่ทำให้เกิดความเหลื่อมล้ำในการเข้าถึงเทคโนโลยี</p>
-            </div>
-
-            <!-- Unit 3 Content Sections -->
-            <div id="unit3-1" class="content-section">
-                <h2 class="unit-title color-orange">อาชีพนักพัฒนาซอฟต์แวร์และเว็บไซต์</h2>
-                <p class="topic-summary">เป็นผู้สร้างสรรค์โปรแกรมคอมพิวเตอร์ แอปพลิเคชันบนมือถือ และเว็บไซต์ต่างๆ ที่เราใช้งานกันอยู่ทุกวัน โดยใช้ทักษะการเขียนโค้ดด้วยภาษาโปรแกรมต่างๆ เช่น Python, JavaScript, Java เพื่อเปลี่ยนไอเดียให้กลายเป็นผลิตภัณฑ์ที่ใช้งานได้จริง เป็นอาชีพที่ต้องการความคิดสร้างสรรค์และการแก้ปัญหาอย่างเป็นระบบ</p>
-            </div>
-             <div id="unit3-2" class="content-section">
-                <h2 class="unit-title color-orange">อาชีพนักวิเคราะห์ข้อมูล</h2>
-                <p class="topic-summary">ในยุคที่ข้อมูลมีค่ามหาศาล นักวิเคราะห์ข้อมูล (Data Analyst) หรือนักวิทยาศาสตร์ข้อมูล (Data Scientist) ทำหน้าที่รวบรวมและวิเคราะห์ข้อมูลจำนวนมากเพื่อค้นหารูปแบบ แนวโน้ม หรือข้อมูลเชิงลึกที่เป็นประโยชน์ต่อองค์กรในการตัดสินใจทางธุรกิจ ต้องมีทักษะด้านสถิติ การเขียนโปรแกรม และการสื่อสารที่ดี</p>
-            </div>
-             <div id="unit3-3" class="content-section">
-                <h2 class="unit-title color-orange">อาชีพด้านความปลอดภัยไซเบอร์</h2>
-                <p class="topic-summary">ผู้เชี่ยวชาญด้าน Cybersecurity มีหน้าที่สำคัญในการปกป้องระบบคอมพิวเตอร์และข้อมูลขององค์กรจากการถูกโจมตีทางไซเบอร์ เช่น การแฮกข้อมูล หรือไวรัสเรียกค่าไถ่ ต้องมีความรู้ความเข้าใจในระบบเครือข่าย การเข้ารหัส และสามารถวางแผนรับมือกับภัยคุกคามรูปแบบต่างๆ ได้</p>
-            </div>
-             <div id="unit3-4" class="content-section">
-                <h2 class="unit-title color-orange">อาชีพการตลาดดิจิทัล</h2>
-                <p class="topic-summary">Digital Marketer คือผู้ที่ใช้ช่องทางออนไลน์ในการทำการตลาด ไม่ว่าจะเป็นโซเชียลมีเดีย (Facebook, Instagram), การทำ SEO (Search Engine Optimization) เพื่อให้เว็บไซต์ติดอันดับต้นๆ บน Google, การยิงโฆษณาออนไลน์ หรือการทำคอนเทนต์มาร์เก็ตติ้ง เพื่อเข้าถึงกลุ่มลูกค้าในยุคดิจิทัล</p>
-            </div>
-             <div id="unit3-5" class="content-section">
-                <h2 class="unit-title color-orange">ทักษะทางเทคโนโลยีที่จำเป็นในอนาคต</h2>
-                <p class="topic-summary">ไม่ว่าจะประกอบอาชีพใด ทักษะด้านเทคโนโลยีกลายเป็นสิ่งจำเป็นสำหรับทุกคน ทักษะสำคัญที่ควรมี ได้แก่ ความสามารถในการเรียนรู้เทคโนโลยีใหม่ๆ (Learnability), การคิดเชิงวิพากษ์ (Critical Thinking) เพื่อวิเคราะห์ข้อมูลข่าวสาร, และทักษะการทำงานร่วมกับผู้อื่นบนแพลตฟอร์มดิจิทัล (Digital Collaboration)</p>
-            </div>
-            
-            <!-- Welcome Message (Must be last for CSS :target to work) -->
-            <div id="welcome" class="content-section">
-                <h2>ยินดีต้อนรับ</h2>
-                <p>กรุณาเลือกหน่วยการเรียนรู้จากเมนูด้านข้างเพื่อดูเนื้อหา</p>
-            </div>
-
-        </main>
-    </div>
-
+<header class="main-header">
+  <h1>WELCOME</h1>
+  <p>to Computer Education</p>
+</header>
+<div class="container">
+<aside class="sidebar">
+<div class="sidebar-header">
+<svg class="icon" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 011.085.12L10 11.85l3.665-3.679a.999.999 0 011.085-.12L17 7.92a1 1 0 000-1.84l-7-3zM10 15a1 1 0 00.894.553l7-3A1 1 0 0017 10.5V8.22a1 1 0 00-1.447-.894L10 11.114l-5.553-3.784A1 1 0 003 8.22v2.28a1 1 0 00.106.447l7 3z"></path>
+</svg>
+<h2>สารบัญ</h2>
+</div><div class="menu-group"><h3 class="menu-group-title">เมนูหลัก</h3><ul><li><a class="menu-btn-sub" href="index.html">← กลับหน้าแรก</a></li></ul></div>
+<nav>
+<div class="menu-group">
+<h3 class="menu-group-title">หน่วยการเรียนรู้ที่ 1: เทคโนโลยีสารสนเทศในการนำเสนอ</h3>
+<ul>
+<li><a class="menu-btn-sub" href="unit1.html#unit1-1">หลักการออกแบบการนำเสนอ</a></li>
+<li><a class="menu-btn-sub" href="unit1.html#unit1-2">การเลือกใช้ซอฟต์แวร์</a></li>
+<li><a class="menu-btn-sub" href="unit1.html#unit1-3">การใช้สื่อมัลติมีเดีย</a></li>
+<li><a class="menu-btn-sub" href="unit1.html#unit1-4">เทคนิคการนำเสนอให้น่าสนใจ</a></li>
+<li><a class="menu-btn-sub" href="unit1.html#unit1-5">การแบ่งปันข้อมูลอย่างปลอดภัย</a></li>
+</ul>
+</div>
+<div class="menu-group">
+<h3 class="menu-group-title">หน่วยการเรียนรู้ที่ 2: นวัตกรรมและการเปลี่ยนแปลงของเทคโนโลยี</h3>
+<ul>
+<li><a class="menu-btn-sub" href="unit2.html#unit2-1">ความหมายของนวัตกรรม</a></li>
+<li><a class="menu-btn-sub" href="unit2.html#unit2-2">ปัญญาประดิษฐ์ (AI)</a></li>
+<li><a class="menu-btn-sub" href="unit2.html#unit2-3">อินเทอร์เน็ตของสรรพสิ่ง (IoT)</a></li>
+<li><a class="menu-btn-sub" href="unit2.html#unit2-4">เทคโนโลยีคลาวด์</a></li>
+<li><a class="menu-btn-sub" href="unit2.html#unit2-5">ผลกระทบของเทคโนโลยี</a></li>
+</ul>
+</div>
+<div class="menu-group">
+<h3 class="menu-group-title">หน่วยการเรียนรู้ที่ 3: เทคโนโลยีสารสนเทศกับอาชีพ</h3>
+<ul>
+<li><a class="menu-btn-sub" href="unit3.html#unit3-1">อาชีพนักพัฒนาซอฟต์แวร์</a></li>
+<li><a class="menu-btn-sub" href="unit3.html#unit3-2">อาชีพนักวิเคราะห์ข้อมูล</a></li>
+<li><a class="menu-btn-sub" href="unit3.html#unit3-3">อาชีพความปลอดภัยไซเบอร์</a></li>
+<li><a class="menu-btn-sub" href="unit3.html#unit3-4">อาชีพการตลาดดิจิทัล</a></li>
+<li><a class="menu-btn-sub" href="unit3.html#unit3-5">ทักษะที่จำเป็นในอนาคต</a></li>
+</ul>
+</div>
+</nav>
+</aside>
+<main class="main-content">
+<div class="content-section" id="welcome"><img alt="ภาพปก" src="image/image.png" style="max-width:100%;height:auto;border-radius:0.75rem;box-shadow:0 10px 25px rgba(0,0,0,0.1);margin-bottom:1rem;"/>
+<h2>ยินดีต้อนรับ</h2>
+<p>กรุณาเลือกหน่วยการเรียนรู้จากเมนูด้านข้างเพื่อดูเนื้อหา</p>
+</div>
+</main>
+</div>
 </body>
 </html>
-
